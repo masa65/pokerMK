@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>過去の取引履歴ページ</title>
+</head>
+<body>
+    <h1>過去の取引履歴ページ</h1>
+    <ul>
+        {% for transactions in history %}
+        <li>
+            <a href="#">{{ transactions[0]['date'].split(' ')[0] }}</a>
+            <ul>
+                {% for transaction in transactions %}
+                <li>{{ transaction.date }} - {{ transaction.name }} - {{ transaction.type }} - {{ transaction.amount }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('home') }}">ホームに戻る</a>
+</body>
+</html>
+

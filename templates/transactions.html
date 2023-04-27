@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>入出金管理ページ</title>
+</head>
+<body>
+    <h1>入出金管理ページ</h1>
+    <table>
+        <tr>
+            <th>日時</th>
+            <th>名前</th>
+            <th>種類</th>
+            <th>金額</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.date }}</td>
+            <td>{{ transaction.name }}</td>
+            <td>{{ transaction.type }}</td>
+            <td>{{ transaction.amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>残高: {{ total }}</h2>
+    <button onclick="location.href='{{ url_for('save_transactions') }}'">取引履歴を保存</button>
+    <a href="{{ url_for('home') }}">ホームに戻る</a>
+</body>
+</html>
+

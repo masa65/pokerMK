@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ホーム画面</title>
+</head>
+<body>
+    <h1>顧客の入出金管理アプリ
+    </h1>
+    <ul>
+        <li><a href="{{ url_for('deposit') }}">入金ページ</a></li>
+        <li><a href="{{ url_for('withdraw') }}">出金ページ</a></li>
+        <li><a href="{{ url_for('transactions') }}">入出金管理ページ</a></li>
+        <li><a href="{{ url_for('expenses') }}">経費ページ</a></li>
+        <li><a href="{{ url_for('history') }}">過去の取引履歴ページ</a></li>
+    </ul>
+</body>
+</html>
+
